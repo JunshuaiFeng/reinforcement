@@ -15,7 +15,7 @@ Task: Implement an explicit policy for the cartpole environment without using an
 The code is in [02_cart_pole_policy.ipynb](02_cart_pole_policy.ipynb). 
 The algorithm in the code: Our goal is to balance the pendulum and prevent the pole from falling aside. From the OpenAI gym [Wiki](https://github.com/openai/gym/wiki/CartPole-v0), we can find out the *observation* includes [cart position, cart velocity, pole angle, pole tip velocity]. Intuitively, the cart position doesn't affect the pole falling trend. As to velocity, the pole tip velocity is more decisive than the cart velocity itself. Furthermore, the pole angle is the most important factor in deciding the pole balance. Therefore, we take the pole angle and the pole tip velocity into account for action determination. After trying different weights for the pole tip velocity, it turned out to be the best when its weight is much smaller than the weight for pole angle. Once we figure out which action to take to push the cart, we can keep the pole balanced on the string. Here, we set 10 episodes for our experiment and timestamp of 200 in each episode. It's considered as a win if the cart can stay balanced over 200 timestamp.
 
-## Cross-entropy method to mountain car
+## Problem 3: Cross-entropy method to mountain car
 
 Task: Apply the cross-entropy method to mountain car. Explain how many episodes are needed to learn a good policy. Explain which reward you use (original, modified).
 
